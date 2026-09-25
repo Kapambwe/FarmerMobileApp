@@ -1,0 +1,22 @@
+[
+  {
+    "programId": "CARBON-AGRO-001",
+    "name": "Smallholder Soil & Tree Stewardship",
+    "summary": "Improve soil health and protect trees while recording the work done on your farm.",
+    "recommendedPractice": "Agroforestry and soil-health practices",
+    "region": "Central and Lusaka Provinces",
+    "status": "Open",
+    "farmerAction": "Plant or protect approved trees and keep a simple activity record.",
+    "isJoined": false
+  },
+  {
+    "programId": "CARBON-GRAZE-001",
+    "name": "Improved Grazing Practices",
+    "summary": "Use planned grazing and protect pasture so livestock production remains resilient.",
+    "recommendedPractice": "Rotational grazing",
+    "region": "Southern Province",
+    "status": "Open",
+    "farmerAction": "Record paddock movement and protect water and pasture areas.",
+    "isJoined": false
+  }
+]

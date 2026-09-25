@@ -6,33 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Farmer Mobile</title>
     <base href="/FarmerMobileApp/" />
+    <link href="_framework/dotnet.tsjifrr42y.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-vZ8mA0hLAtFZCow7gH7ARJl+FnGEyIH2UEdmyjGNKBM=" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="_content/Radzen.Blazor/css/material-base.css?v=11.2.8-fix1">
+    <link rel="stylesheet" href="_content/Radzen.Blazor/css/material-base.css">
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" type="image/png" href="images/extension-loading-mark.png" />
+    <script type="importmap">{
+  "imports": {
+    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.w3qd1tpl0e.js",
+    "./_framework/dotnet.native.js": "./_framework/dotnet.native.ph9is4y8oy.js",
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.zbexyp8zrs.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.tsjifrr42y.js"
+  },
+  "scopes": {},
+  "integrity": {
+    "./_framework/blazor.webassembly.js": "sha256-lDXsDYFgm62F+YUvxES7IOTCXYpiHpU3uR45YdC6mq4=",
+    "./_framework/blazor.webassembly.w3qd1tpl0e.js": "sha256-lDXsDYFgm62F+YUvxES7IOTCXYpiHpU3uR45YdC6mq4=",
+    "./_framework/dotnet.js": "sha256-vZ8mA0hLAtFZCow7gH7ARJl+FnGEyIH2UEdmyjGNKBM=",
+    "./_framework/dotnet.native.js": "sha256-jUw3QN1uMUYE2wUWciK6DpYZYnmP68wGyPCVwhkbL14=",
+    "./_framework/dotnet.native.ph9is4y8oy.js": "sha256-jUw3QN1uMUYE2wUWciK6DpYZYnmP68wGyPCVwhkbL14=",
+    "./_framework/dotnet.runtime.js": "sha256-MZMguyke9CroSQl+L/SHIGFkPTD+LtYGXkXjAvwWx40=",
+    "./_framework/dotnet.runtime.zbexyp8zrs.js": "sha256-MZMguyke9CroSQl+L/SHIGFkPTD+LtYGXkXjAvwWx40=",
+    "./_framework/dotnet.tsjifrr42y.js": "sha256-vZ8mA0hLAtFZCow7gH7ARJl+FnGEyIH2UEdmyjGNKBM="
+  }
+}</script>
 </head>
 
-<body>
+<body style="background: #f8fafc; color: #0f172a;">
     <div id="app">
-        <div class="d-flex justify-content-center align-items-center vh-100" style="background: #0f172a; color: white;">
-            <div class="text-center extension-loading-content">
-                <img class="extension-loading-mark" src="images/extension-loading-mark.png" alt="" aria-hidden="true" />
-                <h5 class="mt-3 mb-1 fw-bold">Farmer Mobile</h5>
-                <p class="small mb-0 extension-loading-status"><span class="extension-loading-dot"></span>Connecting to farm operations</p>
-                <span class="visually-hidden">Loading the farmer operations workspace</span>
-            </div>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f8fafc; color: #0f172a;">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌾</div>
+            <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem; color: #0f172a;">Farmer Mobile</div>
+            <div style="font-size: 0.875rem; color: #64748b;">Loading farm workspace...</div>
         </div>
     </div>
 
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
-    </div>
-    <script src="_framework/blazor.webassembly.js"></script>
-    <script src="_content/Radzen.Blazor/Radzen.Blazor.js?v=11.2.8-fix1"></script>
-    <script src="js/radzen-compat.js?v=11.2.8-fix1"></script>
+    <script src="_framework/blazor.webassembly.w3qd1tpl0e.js"></script>
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
+    <script src="js/radzen-compat.js"></script>
+    <script src="js/fieldMapping.js"></script>
 </body>
 
 </html>

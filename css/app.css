@@ -352,3 +352,12 @@ html.fieldops-tally-mode .bg-light { background: #020617 !important; }
     .rz-body { margin-left: 0 !important; }
     .rz-content-container { padding: 1rem !important; }
 }
+.summary-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem; }
+.receipt-list { display:grid; gap:.75rem; }
+.receipt-card { cursor:pointer; border:1px solid #e2e8f0; transition:transform .15s, box-shadow .15s; }
+.receipt-card:hover { transform:translateY(-2px); box-shadow:0 8px 22px rgba(15,23,42,.08); }
+.detail-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:.7rem; }
+.detail-grid span { color:#64748b; font-size:.7rem; text-transform:uppercase; font-weight:700; letter-spacing:.03em; }
+.detail-grid strong { display:block; color:#0f172a; font-size:.82rem; margin-top:.2rem; text-transform:none; }
+.receipt-detail-panel { position:fixed; right:1rem; bottom:1rem; z-index:1000; width:min(520px,calc(100vw - 2rem)); max-height:calc(100vh - 2rem); overflow:auto; padding:1.1rem; background:#fff; border:1px solid #cbd5e1; border-radius:16px; box-shadow:0 20px 55px rgba(15,23,42,.2); }
+@media (max-width:800px) { .summary-grid { grid-template-columns:repeat(2,1fr); } .detail-grid { grid-template-columns:repeat(2,1fr); } }

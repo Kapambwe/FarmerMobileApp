@@ -1,0 +1,127 @@
+[
+  {
+    "visitId": "EXT-2026-0041",
+    "farmerId": "FARMER-0001",
+    "officerId": "OFF-019",
+    "officerName": "Grace Mwansa",
+    "officerPhone": "+260 977 222 111",
+    "organisation": "FRA Extension Services",
+    "farmLocation": "Chongwe Farm Block",
+    "subjectType": "Crop field",
+    "subjectReference": "FIELD-A-07",
+    "purpose": "Crop health and pest assessment",
+    "scheduledDate": "2026-09-24",
+    "windowStart": "10:00:00",
+    "windowEnd": "12:00:00",
+    "officerEta": "2026-09-24T10:38:00+02:00",
+    "lastLocationUpdatedAt": "2026-09-24T09:45:00+02:00",
+    "status": "Scheduled",
+    "preparationStatus": "Needs preparation",
+    "checklist": [
+      {
+        "itemId": "CHK-1",
+        "description": "Make crop field accessible",
+        "isComplete": false,
+        "isRequired": true
+      },
+      {
+        "itemId": "CHK-2",
+        "description": "Prepare recent input records",
+        "isComplete": false,
+        "isRequired": true
+      }
+    ],
+    "followUps": [
+      {
+        "followUpId": "FOL-101",
+        "description": "Apply organic pest spray on Field A-07",
+        "owner": "Farmer",
+        "dueDate": "2026-09-26",
+        "status": "Open"
+      }
+    ],
+    "evidence": [],
+    "lastServerUpdateAt": "2026-09-23T16:30:00+02:00",
+    "eTag": "visit-41-v3"
+  },
+  {
+    "visitId": "EXT-2026-0042",
+    "farmerId": "FARMER-0001",
+    "officerId": "OFF-021",
+    "officerName": "Peter Banda",
+    "officerPhone": "+260 966 333 444",
+    "organisation": "Ministry of Agriculture",
+    "farmLocation": "Chongwe Farm Block",
+    "subjectType": "Livestock enterprise",
+    "subjectReference": "LIV-DAIRY-02",
+    "purpose": "Livestock health and vaccination review",
+    "scheduledDate": "2026-09-25",
+    "windowStart": "08:30:00",
+    "windowEnd": "10:00:00",
+    "officerEta": null,
+    "lastLocationUpdatedAt": null,
+    "status": "Scheduled",
+    "preparationStatus": "Ready",
+    "checklist": [
+      {
+        "itemId": "CHK-3",
+        "description": "Assemble cattle health logs",
+        "isComplete": true,
+        "isRequired": true
+      }
+    ],
+    "followUps": [],
+    "evidence": [],
+    "lastServerUpdateAt": "2026-09-23T14:15:00+02:00",
+    "eTag": "visit-42-v1"
+  },
+  {
+    "visitId": "EXT-2026-0037",
+    "farmerId": "FARMER-0001",
+    "officerId": "OFF-014",
+    "officerName": "Thandiwe Phiri",
+    "officerPhone": "+260 955 888 777",
+    "organisation": "FRA Extension Services",
+    "farmLocation": "Main grain store",
+    "subjectType": "Storage",
+    "subjectReference": "STORE-01",
+    "purpose": "Post-harvest storage assessment",
+    "scheduledDate": "2026-09-21",
+    "windowStart": "14:00:00",
+    "windowEnd": "15:00:00",
+    "officerEta": null,
+    "lastLocationUpdatedAt": null,
+    "status": "Completed",
+    "preparationStatus": "Complete",
+    "checklist": [
+      {
+        "itemId": "CHK-4",
+        "description": "Clear access to grain silos",
+        "isComplete": true,
+        "isRequired": true
+      }
+    ],
+    "followUps": [
+      {
+        "followUpId": "FOL-099",
+        "description": "Inspect moisture meters in silo 2",
+        "owner": "Officer",
+        "dueDate": "2026-09-22",
+        "status": "Complete"
+      }
+    ],
+    "evidence": [
+      {
+        "evidenceId": "EVI-001",
+        "fileName": "silo_moisture_reading.jpg",
+        "contentType": "image/jpeg",
+        "storageReference": "storage/visits/EXT-2026-0037/evi_001.jpg",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "capturedAt": "2026-09-21T14:30:00+02:00",
+        "capturedBy": "Thandiwe Phiri"
+      }
+    ],
+    "lastServerUpdateAt": "2026-09-21T15:05:00+02:00",
+    "eTag": "visit-37-v5"
+  }
+]

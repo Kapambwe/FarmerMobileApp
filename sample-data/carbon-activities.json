@@ -1,0 +1,28 @@
+[
+  {
+    "activityId": "CARB-ACT-0001",
+    "programmeId": "CARBON-AGRO-001",
+    "programmeName": "Smallholder Soil & Tree Stewardship",
+    "fieldId": "FIELD-01",
+    "fieldName": "Green Valley Field A",
+    "practiceType": "Protected existing trees",
+    "activityDate": "2026-09-18T00:00:00",
+    "notes": "Marked five mature trees and cleared competing weeds without cutting them.",
+    "status": "Approved",
+    "evidenceCount": 1,
+    "syncStatus": "Synced"
+  },
+  {
+    "activityId": "CARB-ACT-0002",
+    "programmeId": "CARBON-AGRO-001",
+    "programmeName": "Smallholder Soil & Tree Stewardship",
+    "fieldId": "FIELD-02",
+    "fieldName": "Green Valley Field B",
+    "practiceType": "Cover crop planted",
+    "activityDate": "2026-09-21T00:00:00",
+    "notes": "Planted a cover crop after the first rains.",
+    "status": "Pending review",
+    "evidenceCount": 0,
+    "syncStatus": "Synced"
+  }
+]
