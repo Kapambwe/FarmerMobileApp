@@ -1,0 +1,12 @@
+{
+  "farmerId": "FARMER-001",
+  "programmeName": "Smallholder Soil & Tree Stewardship",
+  "status": "Enrolled",
+  "nextAction": "Record the cover crop activity in Field B",
+  "activitiesToComplete": 1,
+  "evidenceItemsPendingReview": 0,
+  "verifiedCreditsTco2e": null,
+  "paymentAmount": null,
+  "paymentStatus": "Not available",
+  "lastUpdatedAt": "2026-09-24T08:00:00+02:00"
+}
