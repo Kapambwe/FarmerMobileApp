@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Farmer Mobile</title>
     <base href="/FarmerMobileApp/" />
-    <link href="_framework/dotnet.t997zqx90l.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-T9pPIlo4VbzoMWBV8zI2A1T65clPeKdHtTdZdpUa2mg=" />
+    <link href="_framework/dotnet.jx0onqmbth.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-SaZz65YymA7mVPUl6rev5XAV8QpVOu4ZPQci9Np/FZE=" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="_content/Radzen.Blazor/css/material-base.css">
@@ -16,20 +16,20 @@
     <script type="importmap">{
   "imports": {
     "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.w3qd1tpl0e.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.jx0onqmbth.js",
     "./_framework/dotnet.native.js": "./_framework/dotnet.native.ph9is4y8oy.js",
-    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.zbexyp8zrs.js",
-    "./_framework/dotnet.js": "./_framework/dotnet.t997zqx90l.js"
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.zbexyp8zrs.js"
   },
   "scopes": {},
   "integrity": {
     "./_framework/blazor.webassembly.js": "sha256-lDXsDYFgm62F+YUvxES7IOTCXYpiHpU3uR45YdC6mq4=",
     "./_framework/blazor.webassembly.w3qd1tpl0e.js": "sha256-lDXsDYFgm62F+YUvxES7IOTCXYpiHpU3uR45YdC6mq4=",
-    "./_framework/dotnet.js": "sha256-T9pPIlo4VbzoMWBV8zI2A1T65clPeKdHtTdZdpUa2mg=",
+    "./_framework/dotnet.js": "sha256-SaZz65YymA7mVPUl6rev5XAV8QpVOu4ZPQci9Np/FZE=",
+    "./_framework/dotnet.jx0onqmbth.js": "sha256-SaZz65YymA7mVPUl6rev5XAV8QpVOu4ZPQci9Np/FZE=",
     "./_framework/dotnet.native.js": "sha256-jUw3QN1uMUYE2wUWciK6DpYZYnmP68wGyPCVwhkbL14=",
     "./_framework/dotnet.native.ph9is4y8oy.js": "sha256-jUw3QN1uMUYE2wUWciK6DpYZYnmP68wGyPCVwhkbL14=",
     "./_framework/dotnet.runtime.js": "sha256-MZMguyke9CroSQl+L/SHIGFkPTD+LtYGXkXjAvwWx40=",
-    "./_framework/dotnet.runtime.zbexyp8zrs.js": "sha256-MZMguyke9CroSQl+L/SHIGFkPTD+LtYGXkXjAvwWx40=",
-    "./_framework/dotnet.t997zqx90l.js": "sha256-T9pPIlo4VbzoMWBV8zI2A1T65clPeKdHtTdZdpUa2mg="
+    "./_framework/dotnet.runtime.zbexyp8zrs.js": "sha256-MZMguyke9CroSQl+L/SHIGFkPTD+LtYGXkXjAvwWx40="
   }
 }</script>
 </head>
@@ -49,7 +49,10 @@
     <script src="js/radzen-compat.js"></script>
     <script>
         if ("serviceWorker" in navigator) {
-            const workerUrl = new URL("service-worker.js", document.baseURI);
+            // Bump this when the worker or its precache strategy changes. The
+            // versioned URL forces browsers holding an older worker registration
+            // to fetch the current worker script and discard stale fingerprints.
+            const workerUrl = new URL("service-worker.js?v=3", document.baseURI);
             navigator.serviceWorker.register(workerUrl, {
                 scope: new URL(".", document.baseURI).pathname,
                 updateViaCache: "none"
