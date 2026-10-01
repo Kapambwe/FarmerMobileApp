@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "6xUvZgFH",
+  "version": "v/jtS+eL",
   "assets": [
     {
       "hash": "sha256-R9C/a05rTEuK0b+RiP7OJwlCAiBpfojxxa5X/y7kPrk=",
@@ -526,7 +526,7 @@ self.assetsManifest = {
       "url": "images/extension-loading-mark.png"
     },
     {
-      "hash": "sha256-kraf0vv64C0CKT9WAJ5jlxknbZt47dkNlECLFVUGt98=",
+      "hash": "sha256-NIQQBmTBiO+uJ9t7JT+IaRzFqJZGtCoh/25z/yijneY=",
       "url": "index.html"
     },
     {

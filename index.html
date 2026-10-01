@@ -50,7 +50,10 @@
     <script>
         if ("serviceWorker" in navigator) {
             const workerUrl = new URL("service-worker.js", document.baseURI);
-            navigator.serviceWorker.register(workerUrl, { scope: new URL(".", document.baseURI).pathname })
+            navigator.serviceWorker.register(workerUrl, {
+                scope: new URL(".", document.baseURI).pathname,
+                updateViaCache: "none"
+            })
                 .catch(error => console.error("Farmer Mobile offline shell registration failed.", error));
         }
     </script>

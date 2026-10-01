@@ -1,4 +1,4 @@
-/* Manifest version: 6xUvZgFH */
+/* Manifest version: v/jtS+eL */
 self.importScripts("./service-worker-assets.js");
 
 const cachePrefix = "farmer-mobile-shell-";
@@ -25,7 +25,11 @@ self.addEventListener("install", event => {
             }));
 
         const cache = await caches.open(cacheName);
-        await cache.addAll(assets);
+        const results = await Promise.allSettled(assets.map(asset => cache.add(asset)));
+        const failures = results.filter(result => result.status === "rejected");
+        if (failures.length > 0) {
+            console.warn(`Farmer Mobile cached ${assets.length - failures.length}/${assets.length} shell assets; missing assets will be fetched on demand.`);
+        }
         await self.skipWaiting();
     })());
 });
