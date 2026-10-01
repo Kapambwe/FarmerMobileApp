@@ -9,7 +9,8 @@ function flushBufferedTracking() {
     if (!bufferedTrackingHelper || bufferedTrackingPoints.length === 0) return;
     const points = bufferedTrackingPoints;
     bufferedTrackingPoints = [];
-    bufferedTrackingHelper.invokeMethodAsync('OnLocationBatchUpdated', points);
+    const callback = bufferedTrackingHelper.invokeMethodAsync('OnLocationBatchUpdated', points);
+    if (callback && typeof callback.catch === 'function') callback.catch(() => { });
 }
 
 export function startBufferedTracking(dotNetHelper, batchSize = 5, flushIntervalMilliseconds = 2000) {
