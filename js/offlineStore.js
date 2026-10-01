@@ -107,6 +107,46 @@ export async function put(storeName, id, value) {
     });
 }
 
+export async function getMany(storeName, ids) {
+    assertStoreName(storeName);
+    if (!Array.isArray(ids) || ids.length === 0) return [];
+    const database = await openDatabase();
+
+    return new Promise((resolve, reject) => {
+        const transaction = database.transaction(storeName, "readonly");
+        const objectStore = transaction.objectStore(storeName);
+        const values = new Array(ids.length).fill(null);
+        let remaining = ids.length;
+        ids.forEach((id, index) => {
+            const request = objectStore.get(id);
+            request.onsuccess = () => {
+                values[index] = request.result?.value ?? null;
+                remaining -= 1;
+                if (remaining === 0) resolve(values);
+            };
+            request.onerror = () => reject(request.error ?? new Error("Unable to read offline data."));
+        });
+        transaction.onabort = () => reject(transaction.error ?? new Error("Offline bulk read was aborted."));
+    });
+}
+
+export async function putMany(storeName, entries) {
+    assertStoreName(storeName);
+    if (!Array.isArray(entries) || entries.length === 0) return true;
+    const database = await openDatabase();
+
+    return new Promise((resolve, reject) => {
+        const transaction = database.transaction(storeName, "readwrite");
+        const objectStore = transaction.objectStore(storeName);
+        for (const entry of entries) {
+            if (entry?.id) objectStore.put({ id: entry.id, value: entry.value });
+        }
+        transaction.oncomplete = () => resolve(true);
+        transaction.onerror = () => reject(transaction.error ?? new Error("Unable to save offline data."));
+        transaction.onabort = () => reject(transaction.error ?? new Error("Offline bulk write was aborted."));
+    });
+}
+
 export async function deleteRecord(storeName, id) {
     assertStoreName(storeName);
     const database = await openDatabase();
@@ -117,6 +157,23 @@ export async function deleteRecord(storeName, id) {
         transaction.oncomplete = () => resolve(true);
         transaction.onerror = () => reject(transaction.error ?? new Error("Unable to delete offline data."));
         transaction.onabort = () => reject(transaction.error ?? new Error("Offline delete was aborted."));
+    });
+}
+
+export async function deleteMany(storeName, ids) {
+    assertStoreName(storeName);
+    if (!Array.isArray(ids) || ids.length === 0) return true;
+    const database = await openDatabase();
+
+    return new Promise((resolve, reject) => {
+        const transaction = database.transaction(storeName, "readwrite");
+        const objectStore = transaction.objectStore(storeName);
+        for (const id of ids) {
+            if (id) objectStore.delete(id);
+        }
+        transaction.oncomplete = () => resolve(true);
+        transaction.onerror = () => reject(transaction.error ?? new Error("Unable to delete offline data."));
+        transaction.onabort = () => reject(transaction.error ?? new Error("Offline bulk delete was aborted."));
     });
 }
 

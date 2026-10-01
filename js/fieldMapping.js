@@ -1,6 +1,49 @@
 // Field & Farm Boundary Mapping JavaScript ES Module
 let watchId = null;
 let simulationTimer = null;
+let bufferedTrackingTimer = null;
+let bufferedTrackingPoints = [];
+let bufferedTrackingHelper = null;
+
+function flushBufferedTracking() {
+    if (!bufferedTrackingHelper || bufferedTrackingPoints.length === 0) return;
+    const points = bufferedTrackingPoints;
+    bufferedTrackingPoints = [];
+    bufferedTrackingHelper.invokeMethodAsync('OnLocationBatchUpdated', points);
+}
+
+export function startBufferedTracking(dotNetHelper, batchSize = 5, flushIntervalMilliseconds = 2000) {
+    stopTracking();
+    bufferedTrackingHelper = dotNetHelper;
+    bufferedTrackingPoints = [];
+    const safeBatchSize = Math.max(1, batchSize || 5);
+    const safeInterval = Math.max(250, flushIntervalMilliseconds || 2000);
+
+    if (!navigator.geolocation) {
+        dotNetHelper.invokeMethodAsync('OnLocationError', 'Geolocation is not supported by your device or browser.');
+        return false;
+    }
+
+    bufferedTrackingTimer = setInterval(() => flushBufferedTracking(), safeInterval);
+    watchId = navigator.geolocation.watchPosition(
+        position => {
+            bufferedTrackingPoints.push({
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+                accuracy: position.coords.accuracy || null,
+                altitude: position.coords.altitude || null,
+                timestamp: new Date(position.timestamp).toISOString()
+            });
+            if (bufferedTrackingPoints.length >= safeBatchSize) flushBufferedTracking();
+        },
+        error => {
+            flushBufferedTracking();
+            dotNetHelper.invokeMethodAsync('OnLocationError', error.message || 'GPS acquisition failed.');
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+    );
+    return true;
+}
 
 export function startTracking(dotNetHelper) {
     if (!navigator.geolocation) {
@@ -50,6 +93,7 @@ export function startTracking(dotNetHelper) {
 }
 
 export function stopTracking() {
+    flushBufferedTracking();
     if (watchId !== null) {
         navigator.geolocation.clearWatch(watchId);
         watchId = null;
@@ -58,6 +102,11 @@ export function stopTracking() {
         clearInterval(simulationTimer);
         simulationTimer = null;
     }
+    if (bufferedTrackingTimer !== null) {
+        clearInterval(bufferedTrackingTimer);
+        bufferedTrackingTimer = null;
+    }
+    bufferedTrackingHelper = null;
     return true;
 }
 
@@ -169,6 +218,13 @@ export function calculatePolygonMetrics(coordinatesJson) {
         centerLat: centerLat,
         centerLng: centerLng
     };
+}
+
+// Performs the complete geometry analysis in one interop call. Keeping the
+// coordinate traversal and metric calculation in JavaScript avoids a separate
+// serialization/parsing step for each derived value.
+export function analyzeBoundary(coordinates) {
+    return calculatePolygonMetrics(coordinates);
 }
 
 export function renderPreviewCanvas(canvasId, coordinatesJson, titleName) {
