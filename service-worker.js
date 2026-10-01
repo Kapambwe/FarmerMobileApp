@@ -1,4 +1,4 @@
-/* Manifest version: 7GNHHZHZ */
+/* Manifest version: 5NviD/HL */
 self.importScripts("./service-worker-assets.js");
 
 const cachePrefix = "farmer-mobile-shell-";
