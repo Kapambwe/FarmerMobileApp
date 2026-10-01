@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "sAP3EtgM",
+  "version": "7GNHHZHZ",
   "assets": [
     {
       "hash": "sha256-R9C/a05rTEuK0b+RiP7OJwlCAiBpfojxxa5X/y7kPrk=",
@@ -150,8 +150,8 @@ self.assetsManifest = {
       "url": "_framework/CompanyApp.Shared.Traceability.Contracts.5syxajh5vh.wasm"
     },
     {
-      "hash": "sha256-aurl9/5B6wO5PSQSC/P4EE/D9V8RsU9J3Xk54+W/sFk=",
-      "url": "_framework/FarmerMobileApp.ip04dbshhf.wasm"
+      "hash": "sha256-FJAayHB5HZ7JW9iV+dT6kDu+eSKSPDmsJognSywqCk0=",
+      "url": "_framework/FarmerMobileApp.gbta5i5rm7.wasm"
     },
     {
       "hash": "sha256-RMKOlHz357qhPgjG8nhgknhlMQcWaR76UGcNUqUNVW0=",
@@ -474,8 +474,8 @@ self.assetsManifest = {
       "url": "_framework/dotnet.runtime.zbexyp8zrs.js"
     },
     {
-      "hash": "sha256-UmTcJoKqbZIpvPa8KY19/izqa0cmRXkWhOyxsTaqQpc=",
-      "url": "_framework/dotnet.y0v9zfkq9v.js"
+      "hash": "sha256-rQ3IfjWRmnAX8/UiKwWobsbuHoiZCiOW+12t6jREngI=",
+      "url": "_framework/dotnet.xjekv24ix7.js"
     },
     {
       "hash": "sha256-IifQMUDjB5rUvqS6aNlWG+JgpNp8UcE9whm/YXTax5k=",
@@ -526,7 +526,7 @@ self.assetsManifest = {
       "url": "images/extension-loading-mark.png"
     },
     {
-      "hash": "sha256-32OmQJgMfGnHVX9BQCu99C6y6l5UO8gt7+MMZcqgdAI=",
+      "hash": "sha256-lLWtivkqqySouldQJgngy8cg6oHsuozLyRN8qZp5jaY=",
       "url": "index.html"
     },
     {
