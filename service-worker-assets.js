@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "5NviD/HL",
+  "version": "MwHFnCiA",
   "assets": [
     {
       "hash": "sha256-R9C/a05rTEuK0b+RiP7OJwlCAiBpfojxxa5X/y7kPrk=",
@@ -150,8 +150,8 @@ self.assetsManifest = {
       "url": "_framework/CompanyApp.Shared.Traceability.Contracts.5syxajh5vh.wasm"
     },
     {
-      "hash": "sha256-FrqinNZEMdFr3fDUhOzjZgtPqdnymjpdN1Q+f9LfSZ8=",
-      "url": "_framework/FarmerMobileApp.itr9hxzjrk.wasm"
+      "hash": "sha256-Of6VV1NbaBupA8hsvLe9AwFknrX0DK2EYsgF3LKk4Ns=",
+      "url": "_framework/FarmerMobileApp.fiv103opjq.wasm"
     },
     {
       "hash": "sha256-RMKOlHz357qhPgjG8nhgknhlMQcWaR76UGcNUqUNVW0=",
@@ -206,8 +206,8 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.Extensions.DependencyInjection.61c9j8pwhq.wasm"
     },
     {
-      "hash": "sha256-qRmZBBXsGfYfh+9OsNZBdzhFg3+W7GBr63VvFnguRtE=",
-      "url": "_framework/Microsoft.Extensions.DependencyInjection.Abstractions.dnitixqgod.wasm"
+      "hash": "sha256-5/QdQg51dU9SQk+F7FGnHWHY1Ki9Wr9AkcmKHDBVRqU=",
+      "url": "_framework/Microsoft.Extensions.DependencyInjection.Abstractions.j912mv170z.wasm"
     },
     {
       "hash": "sha256-SYLTEt2DTCtUluoNTbHyenQ206zhP8tHa/eYkEE48Vo=",
@@ -462,6 +462,10 @@ self.assetsManifest = {
       "url": "_framework/de/Radzen.Blazor.resources.w7a5tisoh7.wasm"
     },
     {
+      "hash": "sha256-7Z1vBRW7IqpUnP+mEZaxxN0BwoSRtSy0FIcZQ0Vh/vM=",
+      "url": "_framework/dotnet.d415lxv70v.js"
+    },
+    {
       "hash": "sha256-LrwkmGLS5cmyf7FPDtcyIY11ScD/CnJXeqpIdqt3HVs=",
       "url": "_framework/dotnet.native.mvum2b7l6a.wasm"
     },
@@ -472,10 +476,6 @@ self.assetsManifest = {
     {
       "hash": "sha256-MZMguyke9CroSQl+L/SHIGFkPTD+LtYGXkXjAvwWx40=",
       "url": "_framework/dotnet.runtime.zbexyp8zrs.js"
-    },
-    {
-      "hash": "sha256-OXSO/ICjte4cF3IKlVsFcGVOCUOH3PezCskBV4xEaG4=",
-      "url": "_framework/dotnet.xm479mym3j.js"
     },
     {
       "hash": "sha256-IifQMUDjB5rUvqS6aNlWG+JgpNp8UcE9whm/YXTax5k=",
@@ -514,7 +514,7 @@ self.assetsManifest = {
       "url": "appsettings.json"
     },
     {
-      "hash": "sha256-O5X5OFbRGcLRkXJDVBylnS8ls0B1t03Bo2z7uSz7YfM=",
+      "hash": "sha256-vgmXNcGiZRD9FcJQ5jZztjE3C5NI782cDzWDqLHOD8o=",
       "url": "css/app.css"
     },
     {
@@ -526,7 +526,7 @@ self.assetsManifest = {
       "url": "images/extension-loading-mark.png"
     },
     {
-      "hash": "sha256-+9hZTjZgnpB7d4hDCfVIFZ2dNIC/sXo2x80fApIhtno=",
+      "hash": "sha256-PiHRay1PyYopkXHE500NTa4piV21zI7qcPtMMneN05U=",
       "url": "index.html"
     },
     {
